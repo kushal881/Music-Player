@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Your Music</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://thumbs.dreamstime.com/b/audio-waves-microphone-14394820.jpg"
+        type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="playlist.svg" alt="playlist" id="playlist-img">
+        <h2>FEEL THE MUSIC</h2>
+        <img src="music.svg" alt="music" id="music-img">
+    </header>
+    <main>
+        <div class="left">
+            <div class="song-img">
+                <img src="image.gif" alt="musicanim" id="musicanim">
+            </div>
+            <div class="volume-div">
+                <div class="volume-img">
+                    <img src="volume.svg" alt="volume" id="vol-svg">
+                </div>
+                <input type="range" id="volume-range" onchange="volume()">
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="details">
+                <h3 id="song-name">Satranga</h3>
+                <h5 id="song-singer">Arijit Singh</h5>
+            </div>
+            <input type="range" id="song-duration" onchange="duration()">
+            <div class="controls">
+                <div class="prev-img">
+                    <img src="prev.svg" alt="prev" id="prev-img" onclick="previousSong()">
+                </div>
+                <div class="play-pause">
+                    <img src="play.svg" alt="play" id="play-pause" onclick="playPause()">
+                </div>
+                <div class="next-img">
+                    <img src="next.svg" alt="next" id="next-img" onclick="nextSong()">
+                </div>
+            </div>
+        </div>
+        <div class="playlist">
+            <div class="playlist-song">
+                <img src="https://c.saavncdn.com/415/Satranga-From-ANIMAL-Hindi-2023-20231027131032-500x500.jpg"
+                    alt="image1">
+                <div class="song-details">
+                    <h2>Satranga</h2>
+                    <h5>Arijit Singh</h5>
+                </div>
+            </div>
+            <div class="playlist-song">
+                <img src="https://i.ytimg.com/vi/NeXbmEnpSz0/maxresdefault.jpg" alt="image2">
+                <div class="song-details">
+                    <h2>Zara Zara</h2>
+                    <h5>JalRaj</h5>
+                </div>
+            </div>
+            <div class="playlist-song">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/da/fc/38/dafc38f4-8148-2d35-83ea-c160082dda81/8905285148121.jpg/1200x1200bf-60.jpg"
+                    alt="image3">
+                <div class="song-details">
+                    <h2>Suniyan Suniyan</h2>
+                    <h5>Juss and MixSingh</h5>
+                </div>
+            </div>
+            <div class="playlist-song">
+                <img src="https://mr-jat.in/siteuploads/generaltheme/thumb/files/sft11/5109/5109-2.webp" alt="image4">
+                <div class="song-details">
+                    <h2>Safar</h2>
+                    <h5>Juss</h5>
+                </div>
+            </div>
+            <div class="playlist-song">
+                <img src="https://mr-jat.in/siteuploads/generaltheme/thumb/files/sft12/5934/5934-2.webp" alt="image5">
+                <div class="song-details">
+                    <h2>Heeriye</h2>
+                    <h5>Arijit Singh, Jasleen Royal</h5>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

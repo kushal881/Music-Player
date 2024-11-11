@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header{
+    width: 100vw;
+    height: 80px;
+    background-color: rgb(13, 13, 14);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    background: linear-gradient(to right, rgb(181, 109, 214), rgb(49, 97, 168), rgb(164, 9, 211));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-color: rgb(26, 21, 21);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.song-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-image: url("https://c.saavncdn.com/415/Satranga-From-ANIMAL-Hindi-2023-20231027131032-500x500.jpg");
+    background-size: cover;
+    box-shadow: 2px 2px 10px rgb(34, 32, 32),-2px -2px 10px rgb(0, 0, 0),-2px -2px 10px rgb(0, 0, 0),2px 2px 10px rgb(0, 0, 0);
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.volume-img{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgb(34, 32, 32),-2px -2px 10px rgb(0, 0, 0),-2px -2px 10px rgb(0, 0, 0),2px 2px 10px rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.volume-img:hover{
+    box-shadow:inset 2px 2px 10px rgba(34, 32, 32, 0.842),-2px -2px 10px rgb(0, 0, 0);
+    transform: scale(80%);
+}
+.volume-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#volume-range {
+    -webkit-appearance: none;
+    width: 40%;
+    height: 5px;
+    background: linear-gradient(to right, rgb(17, 74, 230), rgb(20, 230, 100), rgb(185, 24, 24));
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#volume-range::-webkit-slider-thumb:hover{
+    transform: scale(120%);
+}
+.right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.details{
+    width: 80%;
+    height: 100px;
+    background: transparent;
+    box-shadow: 2px 2px 10px rgb(34, 32, 32),-2px -2px 10px rgb(0, 0, 0),-2px -2px 10px rgb(0, 0, 0),2px 2px 10px rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 30px;
+}
+#song-name{
+    font-size: 30px;
+    background: linear-gradient(to right, rgb(227, 236, 142), rgb(187, 206, 78), rgb(98, 211, 5));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#song-singer{
+    font-size: 15px;
+    background: linear-gradient(to right, rgb(142, 230, 236), rgb(134, 139, 221), rgb(145, 120, 214));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#song-duration {
+    -webkit-appearance: none;
+    width: 60%;
+    height: 5px;
+    background: linear-gradient(to right, rgb(17, 74, 230), rgb(20, 230, 100), rgb(185, 24, 24));
+    border-radius: 50px;
+    cursor: pointer;
+}
+#song-duration::-webkit-slider-thumb:hover{
+    transform: scale(120%);
+}
+.controls{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.prev-img,.play-pause,.next-img{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgb(34, 32, 32),-2px -2px 10px rgb(0, 0, 0),-2px -2px 10px rgb(0, 0, 0),2px 2px 10px rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all 1s;
+}
+.prev-img:hover,.play-pause:hover,.next-img:hover{
+    box-shadow: inset 2px 2px 10px rgb(34, 32, 32),inset -2px -2px 10px rgb(0, 0, 0),inset -2px -2px 10px rgb(0, 0, 0),inset 2px 2px 10px rgb(0, 0, 0);
+    transform: scale(80%);
+}
+#musicanim{
+    position: absolute;
+    width: 150px;
+    mix-blend-mode: color-burn;
+    display: none;
+}
+.playlist{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    left:0;
+    background-color: #20202057;
+    backdrop-filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 0.5s;
+    box-shadow: inset 2px 2px 10px rgb(34, 32, 32),inset -2px -2px 10px rgb(0, 0, 0),inset -2px -2px 10px rgb(0, 0, 0),inset 2px 2px 10px rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.playlist-active{
+    transform: translateX(0%);
+}
+#playlist-img{
+    cursor: pointer;
+}
+.playlist-song{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: rgba(240, 248, 255, 0.432);
+    gap: 10px;
+    cursor: pointer;
+}
+.playlist-song img{
+    width: 100px;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 2px 2px 10px rgb(34, 32, 32);
+}
+.playlist-song h2{
+    background: linear-gradient(to right, rgb(227, 236, 142), rgb(187, 206, 78), rgb(98, 211, 5));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.playlist-song h5{
+    color: rgba(240, 248, 255, 0.726);
+}
+.song-details{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap:3px;
+}
+.playlist-song:hover{
+    background-color: rgba(137, 177, 209, 0.473);
+}
+@media (max-width:900px){
+    main{
+        flex-direction: column;
+
+    }
+    .left,.right{
+        width: 100%;
+    }
+    .song-img{
+        width: 60vw;
+        height: 30vh;
+        margin-top: 20px;
+    }
+    .playlist{
+        width: 100%;
+    }
+}
+
